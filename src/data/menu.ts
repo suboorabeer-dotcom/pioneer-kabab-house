@@ -342,8 +342,8 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Value Deal 4',
     price: 570,
     category: 'Value Deals',
-    description: '1 ZINGER + 1 MINI PIZZA + 1 500ml COLD DRINK + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/PxwtBT6q/676066179-1824106718546886-6622857702904787395-n.jpg'
+    description: 'Crispy Broast Qtr. (Leg Ps) + Chicken Garlic Roll + Fries & Coleslaw',
+    image: 'https://i.postimg.cc/rF7qWjLG/0e0627c4-f858-4c42-9182-a56ce4b55d35.png'
   },
   {
     id: 'd5',
