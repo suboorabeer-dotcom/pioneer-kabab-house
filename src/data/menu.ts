@@ -327,7 +327,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 620,
     category: 'Value Deals',
     description: 'BBQ Sandwich + 1 Chicken Juicy Roll + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/SR3bsk0R/672146721-934699759365105-6697990504496151996-n.jpg'
+    image: 'https://i.postimg.cc/Zq10Vm3L/419073c4-5d5d-4cbd-acbf-27f0f457148e.png'
   },
   {
     id: 'd3',
