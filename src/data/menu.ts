@@ -443,11 +443,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd17',
-    name: 'Value Deal 17',
+    name: 'DEAL 17',
     price: 1050,
     category: 'Value Deals',
-    description: '1 Seekh Kabab Plt. + 1 Beef Boti Plt. + 2 Parathy + Salad & Raita',
-    image: 'https://i.postimg.cc/P5RHVWVS/671542693-1307494511481627-1588101434895829261-n.jpg'
+    description: '1 Seekh Kabab Plate, 1 Beef Boti Plate, 2 Parathy, Salad Aur Raita',
+    image: 'https://i.postimg.cc/cJks2zm9/ad552f6c-41a3-4661-b116-88248a0f6dc1.jpg'
   },
   {
     id: 'd18',
