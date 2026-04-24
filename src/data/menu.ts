@@ -395,19 +395,19 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd11',
-    name: 'Value Deal 11',
+    name: 'DEAL 11',
     price: 500,
     category: 'Value Deals',
-    description: '1 ZINGER BURGER + 2 BROAST PIECES + 1 500ml COLD DRINK + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/pTm1Xd8F/676843758-1288898356764708-3351392203802500182-n.jpg'
+    description: '1-SUB ZINGER, 1-CHICKEN CHATNI ROLL, FRIES & COLESLAW',
+    image: 'https://i.postimg.cc/1tVmDHZC/12a5369c-8f87-4e5d-8bb6-f52987122007.jpg'
   },
   {
     id: 'd12',
-    name: 'Value Deal 12',
+    name: 'DEAL 12',
     price: 600,
     category: 'Value Deals',
-    description: '1 ZINGER + 1 BEEF BURGER + 2 COLD DRINKS + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/KjSPtcKw/676079107-2246324882784211-5783687516564206404-n.jpg'
+    description: '1-SUB ZINGER, 1-BEEF BOTI ROLL, 1-PCS. WING, FRIES & COLESLAW',
+    image: 'https://i.postimg.cc/MZ4RkPTX/962d3140-a5ad-45b0-975e-fc01d0b74eac.jpg'
   },
   {
     id: 'd13',
