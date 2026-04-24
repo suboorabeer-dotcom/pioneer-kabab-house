@@ -499,11 +499,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd24',
-    name: 'Value Deal 24',
+    name: 'DEAL 24',
     price: 2100,
     category: 'Value Deals',
-    description: '2 Qtr Broast (Leg) + 2 Zinger Burger + 2 Chicken Mayo Roll + 1 Cold Drink 1.5 Liter',
-    image: 'https://images.unsplash.com/photo-1561758033-d89a9ad46330?auto=format&fit=crop&q=80&w=800'
+    description: '2 Qtr Broast (Leg), 2 Zinger Burgers, 2 Chicken Mayo Rolls, 1 Cold Drink 1.5 Liter, Fries & Coleslaw',
+    image: 'https://i.postimg.cc/Dzv3c3tC/eba6aeb7-706a-4d66-882e-65148089604b.jpg'
   },
   {
     id: 'd25',
