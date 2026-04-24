@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Menu from './components/Menu';
@@ -6,6 +6,7 @@ import CartDrawer from './components/CartDrawer';
 import Checkout from './components/Checkout';
 import OrderConfirmation from './components/OrderConfirmation';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 import { MenuItem, CartItem, OrderDetails } from './types';
 
 type AppView = 'MENU' | 'CHECKOUT' | 'CONFIRMATION';
@@ -15,6 +16,22 @@ export default function App() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [lastOrderId, setLastOrderId] = useState('');
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return document.documentElement.classList.contains('dark');
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
   const cartCount = useMemo(() => 
     cartItems.reduce((acc, item) => acc + item.quantity, 0), 
@@ -94,10 +111,12 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-off-white">
+    <div className="min-h-screen bg-off-white dark:bg-dark-surface transition-colors duration-300">
       <Navbar 
         cartCount={cartCount} 
         onCartClick={() => setIsCartOpen(true)} 
+        isDarkMode={isDarkMode}
+        onToggleTheme={toggleTheme}
       />
       
       <main className="min-h-screen">
@@ -109,6 +128,7 @@ export default function App() {
       </main>
       
       <Footer />
+      <WhatsAppButton />
 
       <CartDrawer 
         isOpen={isCartOpen}

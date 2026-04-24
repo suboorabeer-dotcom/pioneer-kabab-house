@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Plus, Check } from 'lucide-react';
 import { MenuItem } from '../types';
 import { MENU_ITEMS } from '../data/menu';
+import Testimonials from './Testimonials';
 
 interface FoodCardProps {
   item: MenuItem;
@@ -17,26 +18,28 @@ function FoodCard({ item, onAddToCart, isInCart }: FoodCardProps) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className={`flex flex-col justify-between group p-0 overflow-hidden bg-white rounded-3xl border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-2xl ${isDeal ? 'hover:border-orange-500/30' : 'hover:border-pioneer-red/20'}`}
+      className={`flex flex-col justify-between group p-0 overflow-hidden bg-white dark:bg-dark-card rounded-3xl border border-gray-100 dark:border-dark-border shadow-sm transition-all duration-500 hover:shadow-2xl ${isDeal ? 'hover:border-orange-500/30' : 'hover:border-pioneer-red/20'}`}
     >
       <div className="p-4 flex flex-col h-full">
-        <div className={`relative overflow-hidden rounded-2xl ${isDeal ? 'bg-white' : 'bg-gray-100'} mb-4 h-48 flex items-center justify-center`}>
+        <div className={`relative overflow-hidden rounded-2xl ${isDeal ? 'bg-white' : 'bg-gray-100 dark:bg-dark-surface'} mb-4 h-48 flex items-center justify-center`}>
           {item.link ? (
-            <a href={item.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+            <a href={item.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full overflow-hidden">
               <img 
                 src={item.image} 
                 alt={item.name} 
-                className={`w-full h-full ${isDeal ? 'object-contain' : 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
+                className={`w-full h-full ${isDeal ? 'object-contain' : 'object-cover'} transition-transform duration-700 group-hover:scale-110`}
                 referrerPolicy="no-referrer"
               />
             </a>
           ) : (
-            <img 
-              src={item.image} 
-              alt={item.name} 
-              className={`w-full h-full ${isDeal ? 'object-contain' : 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
-              referrerPolicy="no-referrer"
-            />
+            <div className="block w-full h-full overflow-hidden">
+              <img 
+                src={item.image} 
+                alt={item.name} 
+                className={`w-full h-full ${isDeal ? 'object-contain' : 'object-cover'} transition-transform duration-700 group-hover:scale-110`}
+                referrerPolicy="no-referrer"
+              />
+            </div>
           )}
           {isDeal && (
             <div className="absolute top-3 left-3 bg-orange-500 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">
@@ -46,31 +49,32 @@ function FoodCard({ item, onAddToCart, isInCart }: FoodCardProps) {
         </div>
         
           <div className="flex-grow">
-            <h3 className={`font-black tracking-tight leading-tight mb-2 group-hover:text-orange-600 transition-colors uppercase italic ${isDeal ? 'text-base sm:text-lg text-charcoal' : 'text-sm sm:text-base text-charcoal'}`}>
+            <h3 className={`font-black tracking-tight leading-tight mb-2 group-hover:text-orange-600 transition-colors uppercase italic ${isDeal ? 'text-base sm:text-lg text-charcoal dark:text-gray-100' : 'text-sm sm:text-base text-charcoal dark:text-gray-100'}`}>
               {item.name}
             </h3>
-            <p className="text-gray-500 text-[10px] sm:text-xs mb-4 line-clamp-3 leading-relaxed whitespace-pre-line font-medium italic">
+            <p className="text-gray-500 dark:text-gray-400 text-[10px] sm:text-xs mb-4 line-clamp-3 leading-relaxed whitespace-pre-line font-medium italic">
               {item.description}
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 mt-auto pt-4 border-t border-gray-50">
+          <div className="flex flex-col gap-3 mt-auto pt-4 border-t border-gray-50 dark:border-dark-border">
             <div className="flex items-center justify-between">
-              <span className={`font-black tracking-tighter ${isDeal ? 'text-xl sm:text-2xl text-orange-600' : 'text-lg sm:text-xl text-charcoal'}`}>
+              <span className={`font-black tracking-tighter ${isDeal ? 'text-xl sm:text-2xl text-orange-600' : 'text-lg sm:text-xl text-charcoal dark:text-gray-100'}`}>
                 Rs. {item.price}
               </span>
             </div>
-          <button
+          <motion.button
+            whileTap={{ scale: 0.95 }}
             onClick={() => onAddToCart(item)}
-            className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-2xl font-black text-xs uppercase tracking-widest transition-all duration-300 transform active:scale-95 ${
+            className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-2xl font-black text-xs uppercase tracking-widest transition-all duration-300 ${
               isInCart 
                 ? 'bg-green-500 text-white shadow-lg shadow-green-500/20 cursor-default' 
-                : 'bg-charcoal text-white hover:bg-orange-600 shadow-xl shadow-charcoal/10 hover:shadow-orange-600/30'
+                : 'bg-charcoal dark:bg-pioneer-red text-white hover:bg-orange-600 dark:hover:bg-orange-700 shadow-xl shadow-charcoal/10 hover:shadow-orange-600/30'
             }`}
           >
             {isInCart ? <Check size={16} /> : <Plus size={16} />}
             <span>{isInCart ? 'Added to Cart' : 'Add to Cart'}</span>
-          </button>
+          </motion.button>
         </div>
       </div>
     </motion.div>
@@ -104,10 +108,10 @@ export default function Menu({ onAddToCart, cartItemIds }: MenuProps) {
           return (
             <section key={section.id} id={section.id} className="scroll-mt-32">
               <div className="flex items-center gap-2 sm:gap-4 mb-8 sm:mb-12">
-                <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-tighter italic text-charcoal">
+                <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-tighter italic text-charcoal dark:text-gray-100">
                   {section.title}
                 </h2>
-                <div className="h-px flex-1 bg-gray-100"></div>
+                <div className="h-px flex-1 bg-gray-100 dark:bg-dark-border"></div>
                 <span className="text-[8px] sm:text-[10px] font-black uppercase tracking-widest text-gray-400">
                   {items.length} Items
                 </span>
@@ -125,6 +129,12 @@ export default function Menu({ onAddToCart, cartItemIds }: MenuProps) {
                   ))}
                 </AnimatePresence>
               </div>
+
+              {section.id === 'value-deals' && (
+                <div className="mt-24 -mx-6">
+                  <Testimonials />
+                </div>
+              )}
             </section>
           );
         })}

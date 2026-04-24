@@ -2,7 +2,7 @@ import { MapPin, Phone, Instagram, Facebook, MessageSquare } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 mt-12">
+    <footer className="bg-white dark:bg-dark-surface border-t border-gray-200 dark:border-dark-border mt-12 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
@@ -12,13 +12,13 @@ export default function Footer() {
                 PK
               </div>
               <div>
-                <h1 className="text-xl font-black uppercase tracking-tight text-charcoal leading-none">
+                <h1 className="text-xl font-black uppercase tracking-tight text-charcoal dark:text-white leading-none">
                   Pioneer Kabab House
                 </h1>
                 <p className="text-[8px] font-black uppercase tracking-[0.2em] text-pioneer-red mt-0.5">House of Taste</p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm max-w-sm font-medium">
+            <p className="text-gray-400 dark:text-gray-500 text-sm max-w-sm font-medium">
               Karachi's finest charcoal BBQ and crispy zingers. Serving tradition with a modern bento twist.
             </p>
           </div>
@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Location */}
           <div className="space-y-4">
             <h4 className="font-black uppercase text-xs tracking-widest text-gray-400">Location</h4>
-            <p className="text-sm font-bold text-charcoal flex items-start gap-2">
+            <p className="text-sm font-bold text-charcoal dark:text-gray-300 flex items-start gap-2">
               <MapPin size={16} className="text-pioneer-red shrink-0" />
               Near Mukka Chowk, Ayesha Manzil, F.B. Area, Karachi
             </p>
@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+        <div className="pt-8 border-t border-gray-100 dark:border-dark-border flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-gray-400">
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 bg-pioneer-red rounded-full animate-pulse"></div>
               <span>Orders delivered in 25 to 30 Minutes</span>
@@ -54,17 +54,6 @@ export default function Footer() {
             <p>© 2024 Pioneer Kabab House Karachi</p>
         </div>
       </div>
-      
-      {/* Floating Button for Mobile */}
-      <a 
-        href="https://wa.me/923182234310"
-        className="fixed bottom-6 right-6 z-40 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all transform hover:scale-110 active:scale-95 group"
-      >
-        <MessageSquare size={24} />
-        <span className="absolute right-full mr-3 bg-charcoal text-white px-3 py-1 rounded-lg text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
-          Order on WhatsApp
-        </span>
-      </a>
     </footer>
   );
 }
