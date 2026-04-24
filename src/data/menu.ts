@@ -531,11 +531,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd28',
-    name: 'Value Deal 28',
+    name: 'DEAL 28',
     price: 490,
     category: 'Value Deals',
-    description: '1 ZINGER + 1 DRUM STICK + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/fTQJBNSR/670778431-1519594979815174-1724392236278273847-n.jpg'
+    description: '1 ZINGER, 1 DRUM STICK, FRIES & COLESLAW',
+    image: 'https://i.postimg.cc/9F1kjg0S/aed2eb0d-5a81-430f-89e5-b0cc72668c70.jpg'
   },
   {
     id: 'd29',
