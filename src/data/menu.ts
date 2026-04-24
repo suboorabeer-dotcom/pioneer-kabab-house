@@ -483,11 +483,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd22',
-    name: 'Value Deal 22',
+    name: 'DEAL 22',
     price: 600,
     category: 'Value Deals',
-    description: '1 ZINGER + 1 BROAST + 1 MINI PIZZA + 1 500ml DRINK + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/DfR27krk/672759681-1866633257342042-8596553567555269419-n.jpg'
+    description: '1 CLUB SANDWICH, 1 CRISPY MAYO ROLL, FRIES & COLESLAW',
+    image: 'https://i.postimg.cc/c1knfs88/461343a5-3b58-462c-a8f9-1699c488a798.jpg'
   },
   {
     id: 'd23',
