@@ -411,11 +411,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd13',
-    name: 'Value Deal 13',
+    name: 'DEAL 13',
     price: 410,
     category: 'Value Deals',
-    description: '2 ZINGER BURGERS + 2 COLD DRINKS + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/N0Rf5gcC/673308750-2163566301173642-3602586096437188687-n.jpg'
+    description: '1-CHICKEN BURGER, 1-DRUM STICK, FRIES & COLESLAW',
+    image: 'https://i.postimg.cc/mg0BB99p/60ecfae2-a7ce-4e5f-aa18-16fd60fbc1c0.jpg'
   },
   {
     id: 'd14',
