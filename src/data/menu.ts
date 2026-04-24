@@ -491,11 +491,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd23',
-    name: 'Value Deal 23',
+    name: 'DEAL 23',
     price: 2250,
     category: 'Value Deals',
-    description: '1 ZINGER + 1 BEEF BURGER + 1 BROAST + 1 500ml DRINK + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/N0SSqYX9/673392545-972949785207313-7509969782631500623-n.jpg'
+    description: '2 CHICKEN TIKKA LEG, 1 BEEF BOTI PLATE, 1 RESHMI KABAB PLATE, 6 PARATHA, 1 COLD DRINK (1 LITER)',
+    image: 'https://i.postimg.cc/3NQJFcY3/dd41435b-89a8-4e23-a11b-3712ee5a785a.jpg'
   },
   {
     id: 'd24',
