@@ -515,11 +515,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd26',
-    name: 'Value Deal 26',
-    price: 850,
+    name: 'DEAL 26',
+    price: 540,
     category: 'Value Deals',
-    description: '1 ZINGER + 1 BROAST + 1 500ml DRINK + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/9MfGXjYc/671303960-1723249189048193-4185604370553370516-n.jpg'
+    description: '1 ZINGER, 1 CHICKEN CHATNI ROLL, FRIES & COLESLAW',
+    image: 'https://i.postimg.cc/TPJH2k3P/83c8c148-194b-48e3-a35a-30a15261b2cf.jpg'
   },
   {
     id: 'd27',
