@@ -419,11 +419,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd14',
-    name: 'Value Deal 14',
+    name: 'DEAL 14',
     price: 750,
     category: 'Value Deals',
-    description: '4 ZINGER BURGERS + 4 BROAST PIECES + 1.5L COLD DRINK + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/5tdLZR0v/673711683-899465533142480-2302145807646933547-n.jpg'
+    description: '1-PLT RESHMI KABAB, 1-PARATHA, 1-MAYO ROLL, RAITA SALAD',
+    image: 'https://i.postimg.cc/053ttC13/7bdb49b2-436e-41c6-a409-8edf4781149e.jpg'
   },
   {
     id: 'd15',
