@@ -451,11 +451,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd18',
-    name: 'Value Deal 18',
+    name: 'DEAL 18',
     price: 650,
     category: 'Value Deals',
-    description: '1 Leg Tikka + 1 Beef Boti Roll + 1 Paratha + Raita & Salad',
-    image: 'https://i.postimg.cc/j5qD6QDz/670590592-1289970696431737-7375414210310575547-n.jpg'
+    description: '1-LEG TIKKA, 1-BEEF BOTI ROLL, 1-PARATHA, RAITA & SALAD',
+    image: 'https://i.postimg.cc/nzZ8Lb1G/4a3b7ab8-b649-4708-aeb0-3af464e75611.jpg'
   },
   {
     id: 'd19',
