@@ -475,11 +475,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd21',
-    name: 'Value Deal 21',
+    name: 'DEAL 21',
     price: 480,
     category: 'Value Deals',
-    description: '2 CHICKEN BURGERS + 2 COLD DRINKS + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/YSxV0Vhd/674028177-2302962926899130-7579883467517965599-n.jpg'
+    description: '1 BEEF BURGER, 1 CHICKEN ROLL, FRIES & COLESLAW',
+    image: 'https://i.postimg.cc/htDRgq2K/ecd62582-073f-4bf3-a5d1-eeb24be06431.jpg'
   },
   {
     id: 'd22',
