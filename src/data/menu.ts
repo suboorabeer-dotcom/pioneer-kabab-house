@@ -435,11 +435,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd16',
-    name: 'Value Deal 16',
+    name: 'DEAL 16',
     price: 420,
     category: 'Value Deals',
-    description: '1 ZINGER + 1 BROAST PIECE + 1 500ml COLD DRINK + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/3J6vGJsY/680221635-2162297157943699-813198252282402231-n.jpg'
+    description: '1-Zinger Burger, 1-330 ml drink, Fries & Coleslaw',
+    image: 'https://i.postimg.cc/VL0zT4r0/9102908c-cca3-446b-9c88-e2094c94fdcb.jpg'
   },
   {
     id: 'd17',
