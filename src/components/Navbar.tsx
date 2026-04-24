@@ -158,8 +158,8 @@ export default function Navbar({ cartCount, onCartClick, isDarkMode, onToggleThe
                   onClick={() => scrollToSection(cat.id)}
                   className={`relative flex-shrink-0 px-6 py-2.5 rounded-full text-[11px] font-black uppercase tracking-widest transition-all duration-300 transform active:scale-95 ${
                     isActive 
-                      ? 'bg-pioneer-red text-white shadow-lg shadow-pioneer-red/20' 
-                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-charcoal dark:bg-dark-card dark:text-gray-400 dark:hover:bg-dark-border'
+                      ? 'bg-pioneer-red text-white shadow-lg shadow-pioneer-red/40 scale-105' 
+                      : 'bg-neutral-800 text-white hover:bg-neutral-700 shadow-md'
                   }`}
                 >
                   {cat.label}
