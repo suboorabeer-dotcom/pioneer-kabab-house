@@ -507,11 +507,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd25',
-    name: 'Value Deal 25',
+    name: 'DEAL 25',
     price: 3250,
     category: 'Value Deals',
-    description: 'Full Family Feast - 4 Zinger Burgers + 4 Broast Pieces + 2 Large Pizzas + 2.25L Drink + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/X7dc854P/674157499-1146806154243489-3797126026482340478-n.jpg'
+    description: '2 BIHARI LEG TIKKA, 2 CHICKEN TIKKA LEG, 1 RESHMI KABAB PLT., 1 BEEF BOTI PLT., 6 PARATHA, 4 CHAPATI, 1 COLD DRINK (1 LITER)',
+    image: 'https://i.postimg.cc/VvqJ2bRP/2d507557-66cf-49c9-bcb9-383286efc536.jpg'
   },
   {
     id: 'd26',
