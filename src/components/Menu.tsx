@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Plus, Check } from 'lucide-react';
 import { MenuItem } from '../types';
@@ -7,11 +8,33 @@ import Testimonials from './Testimonials';
 interface FoodCardProps {
   item: MenuItem;
   onAddToCart: (item: MenuItem) => void;
-  isInCart: boolean;
+  cartItemIds: Set<string>;
 }
 
-function FoodCard({ item, onAddToCart, isInCart }: FoodCardProps) {
+function FoodCard({ item, onAddToCart, cartItemIds }: FoodCardProps) {
   const isDeal = item.category === 'Value Deals';
+  const hasVariations = item.variations && item.variations.length > 0;
+  const [selectedSize, setSelectedSize] = useState(hasVariations ? item.variations?.[0].size : null);
+
+  const currentVariation = hasVariations ? item.variations?.find(v => v.size === selectedSize) : null;
+  const currentPrice = currentVariation ? currentVariation.price : item.price;
+
+  const handleAddToCart = () => {
+    if (hasVariations && currentVariation) {
+      onAddToCart({
+        ...item,
+        id: `${item.id}-${currentVariation.size}`,
+        name: `${item.name} (${currentVariation.size})`,
+        price: currentVariation.price,
+        selectedSize: currentVariation.size
+      });
+    } else {
+      onAddToCart(item);
+    }
+  };
+
+  const currentItemId = hasVariations && currentVariation ? `${item.id}-${currentVariation.size}` : item.id;
+  const isCurrentItemInCart = cartItemIds.has(currentItemId);
 
   return (
     <motion.div 
@@ -55,25 +78,44 @@ function FoodCard({ item, onAddToCart, isInCart }: FoodCardProps) {
             <p className="text-gray-500 dark:text-gray-400 text-[10px] sm:text-xs mb-4 line-clamp-3 leading-relaxed whitespace-pre-line font-medium italic">
               {item.description}
             </p>
+
+            {hasVariations && (
+              <div className="flex flex-wrap gap-2 mb-4">
+                {item.variations?.map((v) => (
+                  <button
+                    key={v.size}
+                    onClick={() => setSelectedSize(v.size)}
+                    className={`px-3 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-300 ${
+                      selectedSize === v.size
+                        ? 'bg-pioneer-red text-white shadow-md'
+                        : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-neutral-800 dark:text-gray-400 dark:hover:bg-neutral-700'
+                    }`}
+                  >
+                    {v.size.charAt(0)}: {v.price}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="flex flex-col gap-3 mt-auto pt-4 border-t border-gray-50 dark:border-dark-border">
             <div className="flex items-center justify-between">
               <span className={`font-black tracking-tighter ${isDeal ? 'text-xl sm:text-2xl text-orange-600' : 'text-lg sm:text-xl text-charcoal dark:text-gray-100'}`}>
-                Rs. {item.price}
+                Rs. {currentPrice}
               </span>
             </div>
           <motion.button
             whileTap={{ scale: 0.95 }}
-            onClick={() => onAddToCart(item)}
+            onClick={handleAddToCart}
+            disabled={isCurrentItemInCart}
             className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-2xl font-black text-xs uppercase tracking-widest transition-all duration-300 ${
-              isInCart 
+              isCurrentItemInCart 
                 ? 'bg-green-500 text-white shadow-lg shadow-green-500/20 cursor-default' 
                 : 'bg-charcoal dark:bg-pioneer-red text-white hover:bg-orange-600 dark:hover:bg-orange-700 shadow-xl shadow-charcoal/10 hover:shadow-orange-600/30'
             }`}
           >
-            {isInCart ? <Check size={16} /> : <Plus size={16} />}
-            <span>{isInCart ? 'Added to Cart' : 'Add to Cart'}</span>
+            {isCurrentItemInCart ? <Check size={16} /> : <Plus size={16} />}
+            <span>{isCurrentItemInCart ? 'Added to Cart' : 'Add to Cart'}</span>
           </motion.button>
         </div>
       </div>
@@ -124,7 +166,7 @@ export default function Menu({ onAddToCart, cartItemIds }: MenuProps) {
                       key={item.id} 
                       item={item} 
                       onAddToCart={onAddToCart}
-                      isInCart={cartItemIds.has(item.id)}
+                      cartItemIds={cartItemIds}
                     />
                   ))}
                 </AnimatePresence>

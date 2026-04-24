@@ -8,10 +8,16 @@ export interface MenuItem {
   description: string;
   image: string;
   link?: string;
+  selectedSize?: string;
+  variations?: {
+    size: 'Small' | 'Medium' | 'Large';
+    price: number;
+  }[];
 }
 
 export interface CartItem extends MenuItem {
   quantity: number;
+  selectedSize?: string;
 }
 
 export interface OrderDetails {

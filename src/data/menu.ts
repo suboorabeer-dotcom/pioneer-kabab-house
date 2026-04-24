@@ -243,31 +243,85 @@ export const MENU_ITEMS: MenuItem[] = [
     image: 'https://i.ytimg.com/vi/VRL771RLcPU/maxresdefault.jpg'
   },
 
-  // PIZZA & PASTA - Standard Pizzas
-  { id: 'p_tikka_s', name: 'Tikka Pizza - Small', price: 300, category: 'Pizza & Pasta', description: 'Classic BBQ Tikka chunks with onions and mozzarella.', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800' },
-  { id: 'p_tikka_m', name: 'Tikka Pizza - Medium', price: 500, category: 'Pizza & Pasta', description: 'Classic BBQ Tikka chunks with onions and mozzarella.', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800' },
-  { id: 'p_tikka_l', name: 'Tikka Pizza - Large', price: 650, category: 'Pizza & Pasta', description: 'Classic BBQ Tikka chunks with onions and mozzarella.', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800' },
-  
-  { id: 'p_fajita_s', name: 'Fajita Pizza - Small', price: 300, category: 'Pizza & Pasta', description: 'Delicious fajita chicken with capsicum and onions.', image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=800' },
-  { id: 'p_fajita_m', name: 'Fajita Pizza - Medium', price: 500, category: 'Pizza & Pasta', description: 'Delicious fajita chicken with capsicum and onions.', image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=800' },
-  { id: 'p_fajita_l', name: 'Fajita Pizza - Large', price: 650, category: 'Pizza & Pasta', description: 'Delicious fajita chicken with capsicum and onions.', image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=800' },
-
-  { id: 'p_malai_s', name: 'Malai Pizza - Small', price: 300, category: 'Pizza & Pasta', description: 'Creamy malai boti chunks with mild spices.', image: 'https://images.unsplash.com/photo-1574126154517-d1e0d89ef734?auto=format&fit=crop&q=80&w=800' },
-  { id: 'p_malai_m', name: 'Malai Pizza - Medium', price: 500, category: 'Pizza & Pasta', description: 'Creamy malai boti chunks with mild spices.', image: 'https://images.unsplash.com/photo-1574126154517-d1e0d89ef734?auto=format&fit=crop&q=80&w=800' },
-  { id: 'p_malai_l', name: 'Malai Pizza - Large', price: 650, category: 'Pizza & Pasta', description: 'Creamy malai boti chunks with mild spices.', image: 'https://images.unsplash.com/photo-1574126154517-d1e0d89ef734?auto=format&fit=crop&q=80&w=800' },
-
-  // PIZZA & PASTA - Special Pizzas
-  { id: 'p_supreme_s', name: 'Pioneer Supreme - Small', price: 400, category: 'Pizza & Pasta', description: 'Loaded with chicken, pepperoni, veggies and extra cheese.', image: 'https://images.unsplash.com/photo-1574126154517-d1e0d89ef734?auto=format&fit=crop&q=80&w=800' },
-  { id: 'p_supreme_m', name: 'Pioneer Supreme - Medium', price: 600, category: 'Pizza & Pasta', description: 'Loaded with chicken, pepperoni, veggies and extra cheese.', image: 'https://images.unsplash.com/photo-1574126154517-d1e0d89ef734?auto=format&fit=crop&q=80&w=800' },
-  { id: 'p_supreme_l', name: 'Pioneer Supreme - Large', price: 800, category: 'Pizza & Pasta', description: 'Loaded with chicken, pepperoni, veggies and extra cheese.', image: 'https://images.unsplash.com/photo-1574126154517-d1e0d89ef734?auto=format&fit=crop&q=80&w=800' },
-
-  { id: 'p_cheese_lover_s', name: 'Cheese Lover - Small', price: 400, category: 'Pizza & Pasta', description: 'Thick layer of mozzarella and cheddar blend.', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800' },
-  { id: 'p_cheese_lover_m', name: 'Cheese Lover - Medium', price: 600, category: 'Pizza & Pasta', description: 'Thick layer of mozzarella and cheddar blend.', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800' },
-  { id: 'p_cheese_lover_l', name: 'Cheese Lover - Large', price: 800, category: 'Pizza & Pasta', description: 'Thick layer of mozzarella and cheddar blend.', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800' },
-
-  { id: 'p_afghani_feast_s', name: 'Afghani Feast - Small', price: 400, category: 'Pizza & Pasta', description: 'Authentic Afghani boti chunks with specialized toppings.', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800' },
-  { id: 'p_afghani_feast_m', name: 'Afghani Feast - Medium', price: 600, category: 'Pizza & Pasta', description: 'Authentic Afghani boti chunks with specialized toppings.', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800' },
-  { id: 'p_afghani_feast_l', name: 'Afghani Feast - Large', price: 800, category: 'Pizza & Pasta', description: 'Authentic Afghani boti chunks with specialized toppings.', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800' },
+  // PIZZA & PASTA
+  {
+    id: 'p_tikka',
+    name: 'Tikka Pizza',
+    price: 300,
+    category: 'Pizza & Pasta',
+    description: 'Classic BBQ Tikka chunks with onions and mozzarella.',
+    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800',
+    variations: [
+      { size: 'Small', price: 300 },
+      { size: 'Medium', price: 500 },
+      { size: 'Large', price: 650 }
+    ]
+  },
+  {
+    id: 'p_fajita',
+    name: 'Fajita Pizza',
+    price: 300,
+    category: 'Pizza & Pasta',
+    description: 'Delicious fajita chicken with capsicum and onions.',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=800',
+    variations: [
+      { size: 'Small', price: 300 },
+      { size: 'Medium', price: 500 },
+      { size: 'Large', price: 650 }
+    ]
+  },
+  {
+    id: 'p_malai',
+    name: 'Malai Pizza',
+    price: 300,
+    category: 'Pizza & Pasta',
+    description: 'Creamy malai boti chunks with mild spices.',
+    image: 'https://images.unsplash.com/photo-1574126154517-d1e0d89ef734?auto=format&fit=crop&q=80&w=800',
+    variations: [
+      { size: 'Small', price: 300 },
+      { size: 'Medium', price: 500 },
+      { size: 'Large', price: 650 }
+    ]
+  },
+  {
+    id: 'p_supreme',
+    name: 'Pioneer Supreme',
+    price: 400,
+    category: 'Pizza & Pasta',
+    description: 'Loaded with chicken, pepperoni, veggies and extra cheese.',
+    image: 'https://images.unsplash.com/photo-1574126154517-d1e0d89ef734?auto=format&fit=crop&q=80&w=800',
+    variations: [
+      { size: 'Small', price: 400 },
+      { size: 'Medium', price: 600 },
+      { size: 'Large', price: 800 }
+    ]
+  },
+  {
+    id: 'p_cheese_lover',
+    name: 'Cheese Lover',
+    price: 400,
+    category: 'Pizza & Pasta',
+    description: 'Thick layer of mozzarella and cheddar blend.',
+    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800',
+    variations: [
+      { size: 'Small', price: 400 },
+      { size: 'Medium', price: 600 },
+      { size: 'Large', price: 800 }
+    ]
+  },
+  {
+    id: 'p_afghani_feast',
+    name: 'Afghani Feast',
+    price: 400,
+    category: 'Pizza & Pasta',
+    description: 'Authentic Afghani boti chunks with specialized toppings.',
+    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800',
+    variations: [
+      { size: 'Small', price: 400 },
+      { size: 'Medium', price: 600 },
+      { size: 'Large', price: 800 }
+    ]
+  },
 
   {
     id: 'p3',
