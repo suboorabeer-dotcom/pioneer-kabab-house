@@ -459,11 +459,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd19',
-    name: 'Value Deal 19',
+    name: 'DEAL 19',
     price: 1050,
     category: 'Value Deals',
-    description: '4 CHICKEN BURGERS + 4 BROAST PIECES + 1.5L COLD DRINK + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/bwY8TQkC/670902051-2465880130530042-2622921315674356385-n.jpg'
+    description: '1-PLT RESHMI KABAB, 1-MALAI BOTI PLT, 2 PARATHY, SALAD & RAITA',
+    image: 'https://i.postimg.cc/MKJs2bdd/5de2025d-50f1-4ec1-beea-24a77dd71161.jpg'
   },
   {
     id: 'd20',
