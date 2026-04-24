@@ -467,11 +467,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd20',
-    name: 'Value Deal 20',
+    name: 'DEAL 20',
     price: 700,
     category: 'Value Deals',
-    description: '2 ZINGER BURGERS + 2 BROAST PIECES + 1.5L COLD DRINK + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/Kzw2Nwxy/673707753-1267399142270644-8512565538732474700-n.jpg'
+    description: '1 QTR BROAST (LEG), 1 ZINGER BURGER, FRIES & COLESLAW',
+    image: 'https://i.postimg.cc/m2rPrKXS/4ed90288-030b-41f5-9a34-b0844c2db4bc.jpg'
   },
   {
     id: 'd21',
