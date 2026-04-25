@@ -6,6 +6,7 @@ import { MENU_ITEMS } from '../data/menu';
 import Testimonials from './Testimonials';
 
 interface FoodCardProps {
+  key?: string | number;
   item: MenuItem;
   onAddToCart: (item: MenuItem) => void;
   cartItemIds: Set<string>;
