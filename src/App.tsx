@@ -14,7 +14,19 @@ type AppView = 'MENU' | 'CHECKOUT' | 'CONFIRMATION';
 export default function App() {
   const [view, setView] = useState<AppView>('MENU');
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [favorites, setFavorites] = useState<Set<string>>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('pioneer-favorites');
+      return saved ? new Set(JSON.parse(saved)) : new Set();
+    }
+    return new Set();
+  });
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('pioneer-favorites', JSON.stringify(Array.from(favorites)));
+  }, [favorites]);
+
   const [lastOrderId, setLastOrderId] = useState('');
   const [isDarkMode, setIsDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -49,6 +61,18 @@ export default function App() {
   );
 
   const deliveryCharge = cartItems.length > 0 ? 100 : 0;
+
+  const toggleFavorite = (id: string) => {
+    setFavorites(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
 
   const handleAddToCart = (item: MenuItem) => {
     setCartItems(prev => {
@@ -124,6 +148,8 @@ export default function App() {
         <Menu 
           onAddToCart={handleAddToCart} 
           cartItemIds={cartItemIds} 
+          favorites={favorites}
+          onToggleFavorite={toggleFavorite}
         />
       </main>
       

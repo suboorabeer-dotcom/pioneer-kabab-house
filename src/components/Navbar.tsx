@@ -28,6 +28,7 @@ export default function Navbar({ cartCount, onCartClick, isDarkMode, onToggleThe
   }, []);
 
   const categories = [
+    { id: 'favorites', label: 'Favorites' },
     { id: 'value-deals', label: 'Deals' },
     { id: 'zinger-burgers', label: 'Burgers' },
     { id: 'bbq', label: 'BBQ' },

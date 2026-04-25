@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Plus, Check } from 'lucide-react';
+import { Plus, Check, Heart } from 'lucide-react';
 import { MenuItem } from '../types';
 import { MENU_ITEMS } from '../data/menu';
 import Testimonials from './Testimonials';
@@ -10,9 +10,11 @@ interface FoodCardProps {
   item: MenuItem;
   onAddToCart: (item: MenuItem) => void;
   cartItemIds: Set<string>;
+  isFavorite: boolean;
+  onToggleFavorite: (id: string) => void;
 }
 
-function FoodCard({ item, onAddToCart, cartItemIds }: FoodCardProps) {
+function FoodCard({ item, onAddToCart, cartItemIds, isFavorite, onToggleFavorite }: FoodCardProps) {
   const isDeal = item.category === 'Value Deals';
   const hasVariations = item.variations && item.variations.length > 0;
   const [selectedSize, setSelectedSize] = useState(hasVariations ? item.variations?.[0].size : null);
@@ -46,6 +48,15 @@ function FoodCard({ item, onAddToCart, cartItemIds }: FoodCardProps) {
     >
       <div className="p-4 flex flex-col h-full">
         <div className={`relative overflow-hidden rounded-2xl ${isDeal ? 'bg-white' : 'bg-gray-100 dark:bg-dark-surface'} mb-4 h-48 flex items-center justify-center`}>
+          <button 
+            onClick={() => onToggleFavorite(item.id)}
+            className="absolute top-3 right-3 z-10 p-2 rounded-full bg-white/80 dark:bg-dark-card/80 backdrop-blur-sm shadow-sm transition-all duration-300 hover:scale-110 group/fav"
+          >
+            <Heart 
+              size={18} 
+              className={`transition-colors duration-300 ${isFavorite ? 'fill-red-500 text-red-500' : 'text-gray-400 group-hover/fav:text-red-400'}`} 
+            />
+          </button>
           {item.link ? (
             <a href={item.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full overflow-hidden">
               <img 
@@ -127,10 +138,13 @@ function FoodCard({ item, onAddToCart, cartItemIds }: FoodCardProps) {
 interface MenuProps {
   onAddToCart: (item: MenuItem) => void;
   cartItemIds: Set<string>;
+  favorites: Set<string>;
+  onToggleFavorite: (id: string) => void;
 }
 
-export default function Menu({ onAddToCart, cartItemIds }: MenuProps) {
+export default function Menu({ onAddToCart, cartItemIds, favorites, onToggleFavorite }: MenuProps) {
   const sections = [
+    { id: 'favorites', title: 'Your Favorites', category: 'Favorites' },
     { id: 'value-deals', title: 'Value Deals', category: 'Value Deals' },
     { id: 'zinger-burgers', title: 'Zinger Burgers', category: 'Zinger Burgers' },
     { id: 'chicken-beef-burgers', title: 'Chicken & Beef Burgers', category: 'Chicken & Beef Burgers' },
@@ -145,7 +159,10 @@ export default function Menu({ onAddToCart, cartItemIds }: MenuProps) {
     <div className="max-w-7xl mx-auto px-6 py-12 pb-32">
       <div className="space-y-24">
         {sections.map((section) => {
-          const items = MENU_ITEMS.filter(item => item.category === section.category);
+          const items = section.category === 'Favorites' 
+            ? MENU_ITEMS.filter(item => favorites.has(item.id))
+            : MENU_ITEMS.filter(item => item.category === section.category);
+            
           if (items.length === 0) return null;
 
           return (
@@ -168,6 +185,8 @@ export default function Menu({ onAddToCart, cartItemIds }: MenuProps) {
                       item={item} 
                       onAddToCart={onAddToCart}
                       cartItemIds={cartItemIds}
+                      isFavorite={favorites.has(item.id)}
+                      onToggleFavorite={onToggleFavorite}
                     />
                   ))}
                 </AnimatePresence>
