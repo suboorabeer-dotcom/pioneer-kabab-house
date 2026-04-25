@@ -670,5 +670,13 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'Value Deals',
     description: '1 REGULAR PIZZA, 3 PIECE GARLIC BREAD, 500 ML COLD DRINK',
     image: 'https://i.postimg.cc/L4cHWhfp/29378ca6-953e-4e78-bc94-51345e8d05c0.jpg'
+  },
+  {
+    id: 'd39',
+    name: 'DEAL 39',
+    price: 3400,
+    category: 'Value Deals',
+    description: '5 REGULAR PIZZA, 2x 1 LITER COLD DRINK',
+    image: 'https://i.postimg.cc/pVZZG53G/2938c13d-fcd7-4fd2-8761-88064401f08e.jpg'
   }
 ];
