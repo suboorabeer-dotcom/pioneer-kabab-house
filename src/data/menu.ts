@@ -601,10 +601,10 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd30',
-    name: 'Value Deal 30',
+    name: 'DEAL 30',
     price: 800,
     category: 'Value Deals',
-    description: '1 ZINGER + 1 CLUB SANDWICH + 1 500ml DRINK + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/3wsLdNWx/673964639-2303250940169193-5067672252238220578-n.jpg'
+    description: '1 ZINGER, 1 CLUB SANDWICH, 1 500 ML DRINK, FRIES & COLESLAW',
+    image: 'https://i.postimg.cc/Jn5YHvhW/53b55e44-1165-4540-b571-3b61f5532575.jpg'
   }
 ];
