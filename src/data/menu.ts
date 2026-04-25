@@ -393,11 +393,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'd4',
-    name: 'Value Deal 4',
+    name: 'DEAL 4',
     price: 570,
     category: 'Value Deals',
-    description: 'Crispy Broast Qtr. (Leg Ps) + Chicken Garlic Roll + Fries & Coleslaw',
-    image: 'https://i.postimg.cc/rF7qWjLG/0e0627c4-f858-4c42-9182-a56ce4b55d35.png'
+    description: 'CRISPY BROAST QTR. (LEG PCS), CHICKEN GARLIC ROLL, FRIES & COLESLAW',
+    image: 'https://i.postimg.cc/tC90Cd2V/ee9830ac-d70c-4f73-be7d-dbba46802193.jpg'
   },
   {
     id: 'd5',
