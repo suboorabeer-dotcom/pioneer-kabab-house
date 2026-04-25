@@ -646,5 +646,13 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'Value Deals',
     description: '2 LAVA PIZZA, 500 ML COLD DRINK',
     image: 'https://i.postimg.cc/T25BL9sg/d085252a-3c45-4b5d-bfbb-375c19db28ec.jpg'
+  },
+  {
+    id: 'd36',
+    name: 'DEAL 36',
+    price: 1500,
+    category: 'Value Deals',
+    description: '3 REGULAR PIZZA, 1 LITER COLD DRINK',
+    image: 'https://i.postimg.cc/Xv0D5STm/bbf155b0-32b1-4e2a-8002-74f9eaee47e0.jpg'
   }
 ];
