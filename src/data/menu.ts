@@ -606,5 +606,13 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'Value Deals',
     description: '1 ZINGER, 1 CLUB SANDWICH, 1 500 ML DRINK, FRIES & COLESLAW',
     image: 'https://i.postimg.cc/Jn5YHvhW/53b55e44-1165-4540-b571-3b61f5532575.jpg'
+  },
+  {
+    id: 'd31',
+    name: 'DEAL 31',
+    price: 2000,
+    category: 'Value Deals',
+    description: '3 LARGE PIZZA (ANY FLAVOR OF YOUR CHOICE), 1 LITER COLD DRINK',
+    image: 'https://i.postimg.cc/YqQNrVdr/2a45934d-6360-496f-b016-62b8112fb7d2.jpg'
   }
 ];
