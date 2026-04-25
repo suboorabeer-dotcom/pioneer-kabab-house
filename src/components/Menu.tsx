@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Plus, Check, Heart } from 'lucide-react';
+import { Plus, Check, Heart, Search, X } from 'lucide-react';
 import { MenuItem } from '../types';
 import { MENU_ITEMS } from '../data/menu';
 import Testimonials from './Testimonials';
@@ -140,9 +140,11 @@ interface MenuProps {
   cartItemIds: Set<string>;
   favorites: Set<string>;
   onToggleFavorite: (id: string) => void;
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
 }
 
-export default function Menu({ onAddToCart, cartItemIds, favorites, onToggleFavorite }: MenuProps) {
+export default function Menu({ onAddToCart, cartItemIds, favorites, onToggleFavorite, searchQuery, setSearchQuery }: MenuProps) {
   const sections = [
     { id: 'favorites', title: 'Your Favorites', category: 'Favorites' },
     { id: 'value-deals', title: 'Value Deals', category: 'Value Deals' },
@@ -157,12 +159,44 @@ export default function Menu({ onAddToCart, cartItemIds, favorites, onToggleFavo
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-12 pb-32">
+      {/* Search Bar Section */}
+      <div className="max-w-2xl mx-auto mb-16 px-4">
+        <div className="relative group">
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <Search className="h-5 w-5 text-gray-400 group-focus-within:text-pioneer-red transition-colors" />
+          </div>
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search for deals, burgers, bbq..."
+            className="w-full bg-white dark:bg-dark-card border-2 border-gray-100 dark:border-dark-border rounded-2xl py-4 pl-12 pr-12 text-gray-900 dark:text-gray-100 focus:outline-none focus:border-pioneer-red dark:focus:border-pioneer-red transition-all shadow-sm focus:shadow-xl text-lg font-medium"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-pioneer-red transition-colors"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          )}
+        </div>
+      </div>
+
       <div className="space-y-24">
         {sections.map((section) => {
-          const items = section.category === 'Favorites' 
+          let items = section.category === 'Favorites' 
             ? MENU_ITEMS.filter(item => favorites.has(item.id))
             : MENU_ITEMS.filter(item => item.category === section.category);
             
+          // Apply Search Filter
+          if (searchQuery.trim()) {
+            items = items.filter(item => 
+              item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+              item.description.toLowerCase().includes(searchQuery.toLowerCase())
+            );
+          }
+
           if (items.length === 0) return null;
 
           return (
@@ -200,6 +234,25 @@ export default function Menu({ onAddToCart, cartItemIds, favorites, onToggleFavo
             </section>
           );
         })}
+
+        {/* No Results Message */}
+        {searchQuery && sections.every(section => {
+           let items = section.category === 'Favorites' 
+           ? MENU_ITEMS.filter(item => favorites.has(item.id))
+           : MENU_ITEMS.filter(item => item.category === section.category);
+           return items.filter(item => 
+             item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+             item.description.toLowerCase().includes(searchQuery.toLowerCase())
+           ).length === 0;
+        }) && (
+          <div className="text-center py-20 px-4">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-100 dark:bg-dark-surface mb-6">
+              <Search size={32} className="text-gray-400" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">No matching deals found</h3>
+            <p className="text-gray-500 dark:text-gray-400 max-w-xs mx-auto">Try searching for something else like "Burger", "Karahi" or "Deal 10".</p>
+          </div>
+        )}
       </div>
     </div>
   );

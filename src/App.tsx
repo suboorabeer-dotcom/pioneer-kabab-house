@@ -21,6 +21,7 @@ export default function App() {
     }
     return new Set();
   });
+  const [searchQuery, setSearchQuery] = useState('');
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
@@ -150,6 +151,8 @@ export default function App() {
           cartItemIds={cartItemIds} 
           favorites={favorites}
           onToggleFavorite={toggleFavorite}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
         />
       </main>
       
