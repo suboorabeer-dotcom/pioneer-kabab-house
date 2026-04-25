@@ -678,5 +678,13 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'Value Deals',
     description: '5 REGULAR PIZZA, 2x 1 LITER COLD DRINK',
     image: 'https://i.postimg.cc/pVZZG53G/2938c13d-fcd7-4fd2-8761-88064401f08e.jpg'
+  },
+  {
+    id: 'd40',
+    name: 'DEAL 40',
+    price: 1400,
+    category: 'Value Deals',
+    description: '2 LARGE PIZZA, 1 LITER COLD DRINK',
+    image: 'https://i.postimg.cc/vmY8vjnZ/298474d1-cb59-478c-9657-597fa145d875.jpg'
   }
 ];
