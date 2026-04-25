@@ -614,5 +614,13 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'Value Deals',
     description: '3 LARGE PIZZA (ANY FLAVOR OF YOUR CHOICE), 1 LITER COLD DRINK',
     image: 'https://i.postimg.cc/YqQNrVdr/2a45934d-6360-496f-b016-62b8112fb7d2.jpg'
+  },
+  {
+    id: 'd32',
+    name: 'DEAL 32',
+    price: 1050,
+    category: 'Value Deals',
+    description: '1 LARGE PIZZA (ANY FLAVOR), 1 ZINGER BURGER, 500 ML COLD DRINK',
+    image: 'https://i.postimg.cc/6566q40R/7fdaf3ea-ee1e-4af7-ab32-cbe43b241da8.jpg'
   }
 ];
