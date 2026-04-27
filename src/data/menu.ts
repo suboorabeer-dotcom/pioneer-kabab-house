@@ -266,6 +266,14 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Delicious beef gyro with traditional toppings and sauces.',
     image: 'https://planetofrecipes.com/wp-content/uploads/2024/01/Beef-Gyro-1-768x987.jpeg'
   },
+  {
+    id: 'g2',
+    name: 'Gelopino Gyro',
+    price: 300,
+    category: 'Rolls & Gyros',
+    description: 'Spicy gyro with jalapenos and special sauce.',
+    image: 'https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-174756000000000000/menu/items/5/item-900000000475760795_1701632050.png?size=medium'
+  },
 
   // PIZZA & PASTA
   {
