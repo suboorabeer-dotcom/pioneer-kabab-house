@@ -166,6 +166,14 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Spicy and herbal grilled chicken tikka marinated in a vibrant green chutney.',
     image: 'https://i.ytimg.com/vi/70kWRkGsaBY/maxresdefault.jpg'
   },
+  {
+    id: 'bbq11',
+    name: 'Chicken Boti (Boneless)',
+    price: 500,
+    category: 'BBQ',
+    description: 'Tender and juicy boneless chicken cubes marinated in traditional spices and charcoal-grilled to perfection.',
+    image: 'https://sagarathome.com/cdn/shop/products/KB2_ChickenBotiKebab_2000x.jpg?v=1597600810'
+  },
 
   // KARAHI & CHINESE
   {
