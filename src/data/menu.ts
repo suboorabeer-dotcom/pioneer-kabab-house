@@ -250,6 +250,14 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Flavorful paratha roll with spicy chutney and melted cheese.',
     image: 'https://i.pinimg.com/originals/f8/9d/94/f89d94f148f2e0918efd068db57a3a46.jpg'
   },
+  {
+    id: 'r8',
+    name: 'Bar BQ Roll',
+    price: 250,
+    category: 'Rolls & Wraps',
+    description: 'Classic BBQ chicken loaded in a fresh paratha roll.',
+    image: 'https://img-global.cpcdn.com/recipes/40e5b26b856778b1/1200x630cq70/photo.jpg'
+  },
 
   // PIZZA & PASTA
   {
