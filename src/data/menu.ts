@@ -242,6 +242,14 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Extra-large jumbo roll loaded with grilled chicken and overflowing creamy garlic mayo.',
     image: 'https://i.ytimg.com/vi/VRL771RLcPU/maxresdefault.jpg'
   },
+  {
+    id: 'r7',
+    name: 'Chatni Cheese Roll',
+    price: 250,
+    category: 'Rolls & Wraps',
+    description: 'Flavorful paratha roll with spicy chutney and melted cheese.',
+    image: 'https://i.pinimg.com/originals/f8/9d/94/f89d94f148f2e0918efd068db57a3a46.jpg'
+  },
 
   // PIZZA & PASTA
   {
