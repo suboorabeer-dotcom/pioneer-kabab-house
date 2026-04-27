@@ -174,6 +174,14 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Tender and juicy boneless chicken cubes marinated in traditional spices and charcoal-grilled to perfection.',
     image: 'https://sagarathome.com/cdn/shop/products/KB2_ChickenBotiKebab_2000x.jpg?v=1597600810'
   },
+  {
+    id: 'bbq12',
+    name: 'Chicken Boti (With Bone) Half Chicken',
+    price: 1000,
+    category: 'BBQ',
+    description: 'Flavorful half chicken with bone, marinated in traditional spices and grilled over charcoal.',
+    image: 'https://megachickenrecipes.com/wp-content/uploads/2022/11/Grilled-half-chicken-recipes-1.webp'
+  },
 
   // KARAHI & CHINESE
   {
