@@ -32,7 +32,7 @@ export default function Navbar({ cartCount, onCartClick, isDarkMode, onToggleThe
     { id: 'value-deals', label: 'Deals' },
     { id: 'zinger-burgers', label: 'Burgers' },
     { id: 'bbq', label: 'BBQ' },
-    { id: 'rolls-wraps', label: 'Rolls' },
+    { id: 'rolls-gyros', label: 'Rolls & Gyros' },
     { id: 'pizza-pasta', label: 'Pizza & Pasta' },
     { id: 'karahi-chinese', label: 'Karahi & Chinese' },
     { id: 'sides', label: 'Sides' },

@@ -152,7 +152,7 @@ export default function Menu({ onAddToCart, cartItemIds, favorites, onToggleFavo
     { id: 'chicken-beef-burgers', title: 'Chicken & Beef Burgers', category: 'Chicken & Beef Burgers' },
     { id: 'bbq', title: 'Bar B Q (BBQ)', category: 'BBQ' },
     { id: 'karahi-chinese', title: 'Karahi & Chinese', category: 'Karahi & Chinese' },
-    { id: 'rolls-wraps', title: 'Rolls & Wraps', category: 'Rolls & Wraps' },
+    { id: 'rolls-gyros', title: 'Rolls & Gyros', category: 'Rolls & Gyros' },
     { id: 'pizza-pasta', title: 'Pizza & Pasta', category: 'Pizza & Pasta' },
     { id: 'sides', title: 'Sides', category: 'Sides' },
   ];

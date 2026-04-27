@@ -1,4 +1,4 @@
-export type Category = 'Zinger Burgers' | 'Chicken & Beef Burgers' | 'BBQ' | 'Karahi & Chinese' | 'Rolls & Wraps' | 'Pizza & Pasta' | 'Value Deals' | 'Sides';
+export type Category = 'Zinger Burgers' | 'Chicken & Beef Burgers' | 'BBQ' | 'Karahi & Chinese' | 'Rolls & Gyros' | 'Pizza & Pasta' | 'Value Deals' | 'Sides';
 
 export interface MenuItem {
   id: string;

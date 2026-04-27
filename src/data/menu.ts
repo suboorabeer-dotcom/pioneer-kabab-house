@@ -193,12 +193,12 @@ export const MENU_ITEMS: MenuItem[] = [
     image: 'https://christieathome.com/wp-content/uploads/2022/04/Chicken-Chow-Mein-13.jpg'
   },
 
-  // ROLLS & WRAPS
+  // ROLLS & GYROS
   {
     id: 'r1',
     name: 'Chatni Roll',
     price: 200,
-    category: 'Rolls & Wraps',
+    category: 'Rolls & Gyros',
     description: 'Traditional BBQ roll with spicy green chutney.',
     image: 'https://i.ytimg.com/vi/NR_03ip-D7A/maxresdefault.jpg'
   },
@@ -206,7 +206,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'r2',
     name: 'Mayo Cheese Roll',
     price: 300,
-    category: 'Rolls & Wraps',
+    category: 'Rolls & Gyros',
     description: 'BBQ roll with garlic mayo and extra cheese.',
     image: 'https://i.ytimg.com/vi/tBq1-HBEv7Q/maxresdefault.jpg'
   },
@@ -214,7 +214,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'r3',
     name: 'Juicy Mayo Roll',
     price: 260,
-    category: 'Rolls & Wraps',
+    category: 'Rolls & Gyros',
     description: 'Extra creamy and juicy paratha roll.',
     image: 'https://www.unileverfoodsolutions.pk/dam/global-ufs/mcos/meps/pakistan/calcmenu/recipes/PK-recipes/sandwiches/garlic-mayo-roll/main-header.jpg'
   },
@@ -222,7 +222,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'r4',
     name: 'Chatpata Roll',
     price: 250,
-    category: 'Rolls & Wraps',
+    category: 'Rolls & Gyros',
     description: 'Spicy and tangy chicken chunks wrapped in a soft paratha with special chatpata masala and onions.',
     image: 'https://i.ytimg.com/vi/1E5-cMrR6u8/maxresdefault.jpg'
   },
@@ -230,7 +230,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'r5',
     name: 'Chicken Tikka Masala Wrap',
     price: 550,
-    category: 'Rolls & Wraps',
+    category: 'Rolls & Gyros',
     description: 'Spicy chicken tikka in a soft wrap.',
     image: 'https://sweetslicerecipes.com/wp-content/uploads/2025/09/chicken-tikka-masala-wraps-3-2.jpg'
   },
@@ -238,7 +238,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'r6',
     name: 'Jumbo Mayo Roll',
     price: 550,
-    category: 'Rolls & Wraps',
+    category: 'Rolls & Gyros',
     description: 'Extra-large jumbo roll loaded with grilled chicken and overflowing creamy garlic mayo.',
     image: 'https://i.ytimg.com/vi/VRL771RLcPU/maxresdefault.jpg'
   },
@@ -246,7 +246,7 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'r7',
     name: 'Chatni Cheese Roll',
     price: 250,
-    category: 'Rolls & Wraps',
+    category: 'Rolls & Gyros',
     description: 'Flavorful paratha roll with spicy chutney and melted cheese.',
     image: 'https://i.pinimg.com/originals/f8/9d/94/f89d94f148f2e0918efd068db57a3a46.jpg'
   },
@@ -254,9 +254,17 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'r8',
     name: 'Bar BQ Roll',
     price: 250,
-    category: 'Rolls & Wraps',
+    category: 'Rolls & Gyros',
     description: 'Classic BBQ chicken loaded in a fresh paratha roll.',
     image: 'https://img-global.cpcdn.com/recipes/40e5b26b856778b1/1200x630cq70/photo.jpg'
+  },
+  {
+    id: 'g1',
+    name: 'Columbian Gyro',
+    price: 300,
+    category: 'Rolls & Gyros',
+    description: 'Delicious beef gyro with traditional toppings and sauces.',
+    image: 'https://planetofrecipes.com/wp-content/uploads/2024/01/Beef-Gyro-1-768x987.jpeg'
   },
 
   // PIZZA & PASTA
