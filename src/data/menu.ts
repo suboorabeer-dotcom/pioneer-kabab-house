@@ -158,6 +158,14 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Succulent and creamy charcoal-grilled chicken tikka marinated in mild spices.',
     image: 'https://curlytales.com/wp-content/uploads/2019/01/chicken-tikka-e1546550133380.jpg'
   },
+  {
+    id: 'bbq10',
+    name: 'Chicken Green Tikka',
+    price: 450,
+    category: 'BBQ',
+    description: 'Spicy and herbal grilled chicken tikka marinated in a vibrant green chutney.',
+    image: 'https://i.ytimg.com/vi/70kWRkGsaBY/maxresdefault.jpg'
+  },
 
   // KARAHI & CHINESE
   {
