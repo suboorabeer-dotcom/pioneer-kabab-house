@@ -150,6 +150,14 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Traditional melt-in-your-mouth beef mince kababs, delicately tied with thread and slow-grilled with secret spices.',
     image: 'https://assets.indolj.io/upload/1734422543-dhaga%20kabab.webp'
   },
+  {
+    id: 'bbq9',
+    name: 'Chicken Malai Tikka',
+    price: 450,
+    category: 'BBQ',
+    description: 'Succulent and creamy charcoal-grilled chicken tikka marinated in mild spices.',
+    image: 'https://curlytales.com/wp-content/uploads/2019/01/chicken-tikka-e1546550133380.jpg'
+  },
 
   // KARAHI & CHINESE
   {
