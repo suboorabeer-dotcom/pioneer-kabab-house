@@ -204,11 +204,11 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'r2',
-    name: 'Mayo Roll',
-    price: 250,
+    name: 'Mayo Cheese Roll',
+    price: 300,
     category: 'Rolls & Wraps',
-    description: 'BBQ roll with garlic mayo.',
-    image: 'https://i.ytimg.com/vi/MS4BRvWaiTo/maxresdefault.jpg'
+    description: 'BBQ roll with garlic mayo and extra cheese.',
+    image: 'https://i.ytimg.com/vi/tBq1-HBEv7Q/maxresdefault.jpg'
   },
   {
     id: 'r3',
