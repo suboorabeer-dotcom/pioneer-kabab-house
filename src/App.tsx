@@ -106,9 +106,20 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handlePlaceOrder = (details: OrderDetails) => {
-    console.log('Order Placed:', { items: cartItems, details });
+  const handlePlaceOrder = (details: Partial<OrderDetails>) => {
     const orderId = Math.random().toString(36).substring(2, 9).toUpperCase();
+    const newOrder: OrderDetails = {
+      ...details as any,
+      id: orderId,
+      date: new Date().toISOString(),
+      items: [...cartItems],
+      status: 'Pending'
+    };
+
+    // Save to order history
+    const existingHistory = JSON.parse(localStorage.getItem('pioneer-orders') || '[]');
+    localStorage.setItem('pioneer-orders', JSON.stringify([newOrder, ...existingHistory]));
+
     setLastOrderId(orderId);
     setCartItems([]);
     setView('CONFIRMATION');

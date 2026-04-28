@@ -1,6 +1,8 @@
-import { ShoppingCart, Phone, Moon, Sun, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ShoppingCart, Phone, Moon, Sun, Clock, ChevronLeft, ChevronRight, History } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useEffect, useRef } from 'react';
+import OrderHistoryDrawer from './OrderHistoryDrawer';
+import { OrderDetails } from '../types';
 
 interface NavbarProps {
   cartCount: number;
@@ -12,7 +14,16 @@ interface NavbarProps {
 export default function Navbar({ cartCount, onCartClick, isDarkMode, onToggleTheme }: NavbarProps) {
   const [activeCategory, setActiveCategory] = useState<string>('value-deals');
   const [isOpen, setIsOpen] = useState(false);
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+  const [orders, setOrders] = useState<OrderDetails[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const savedOrders = localStorage.getItem('pioneer-orders');
+    if (savedOrders) {
+      setOrders(JSON.parse(savedOrders));
+    }
+  }, [isHistoryOpen]);
 
   useEffect(() => {
     const checkStatus = () => {
@@ -126,6 +137,19 @@ export default function Navbar({ cartCount, onCartClick, isDarkMode, onToggleThe
             >
               {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
+
+            <button
+              onClick={() => setIsHistoryOpen(true)}
+              className="p-2.5 rounded-xl bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-dark-card dark:text-gray-400 dark:hover:bg-dark-border transition-all relative group"
+              title="Order History"
+            >
+              <History size={20} />
+              {orders.length > 0 && (
+                <span className="absolute -top-1 -right-1 w-4 h-4 bg-pioneer-red text-white text-[8px] font-black rounded-full flex items-center justify-center border-2 border-white dark:border-dark-surface shadow-sm">
+                  {orders.length}
+                </span>
+              )}
+            </button>
             
             <button 
               onClick={onCartClick}
@@ -207,6 +231,11 @@ export default function Navbar({ cartCount, onCartClick, isDarkMode, onToggleThe
           </button>
         </div>
       </div>
+      <OrderHistoryDrawer 
+        isOpen={isHistoryOpen} 
+        onClose={() => setIsHistoryOpen(false)} 
+        orders={orders} 
+      />
     </header>
   );
 }

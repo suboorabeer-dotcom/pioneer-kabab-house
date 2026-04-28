@@ -21,9 +21,13 @@ export interface CartItem extends MenuItem {
 }
 
 export interface OrderDetails {
+  id: string;
+  date: string;
   name: string;
   phone: string;
   address: string;
+  items: CartItem[];
   deliveryCharge: number;
   total: number;
+  status: 'Pending' | 'Delivered' | 'Cancelled';
 }

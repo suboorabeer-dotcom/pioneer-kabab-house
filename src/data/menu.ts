@@ -238,6 +238,14 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Crispy and flavorful charcoal-grilled chicken necks, seasoned with a special mix of BBQ spices.',
     image: 'https://i.ytimg.com/vi/_tyt2agcalI/maxresdefault.jpg'
   },
+  {
+    id: 'bbq20',
+    name: 'Reshmi Gola Kabab',
+    price: 400,
+    category: 'BBQ',
+    description: 'Silkily smooth and melt-in-your-mouth minced chicken kababs with a rich, creamy texture.',
+    image: 'https://www.shutterstock.com/shutterstock/photos/2214158841/display_1500/stock-photo-chicken-gola-kabab-small-meat-balls-with-hole-frozen-home-made-food-2214158841.jpg'
+  },
 
   // KARAHI & CHINESE
   {
