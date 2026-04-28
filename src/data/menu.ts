@@ -254,6 +254,22 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Creamy and tender chicken kababs marinated in a rich mixture of cream and mild spices.',
     image: 'https://cpimg.tistatic.com/07897072/b/4/Chicken-Malai-Kabab.jpg'
   },
+  {
+    id: 'bbq22',
+    name: 'Chandan Kabab',
+    price: 400,
+    category: 'BBQ',
+    description: 'Aromatic and smoky minced meat kababs, lightly spiced and grilled to a golden sandalwood-like perfection.',
+    image: 'https://staticfanpage.akamaized.net/wp-content/uploads/sites/22/2022/03/Seekh-Kebab-1200x675.jpg'
+  },
+  {
+    id: 'bbq23',
+    name: 'Kabab Fry',
+    price: 600,
+    category: 'BBQ',
+    description: 'Spicy and delicious mashed kababs fried with onions, tomatoes, and aromatic spices for a rich flavor.',
+    image: 'http://i.ytimg.com/vi/eRGntHMXJT4/maxresdefault.jpg'
+  },
 
   // KARAHI & CHINESE
   {

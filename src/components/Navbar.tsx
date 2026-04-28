@@ -9,28 +9,14 @@ interface NavbarProps {
   onCartClick: () => void;
   isDarkMode: boolean;
   onToggleTheme: () => void;
+  orders: OrderDetails[];
 }
 
-export default function Navbar({ cartCount, onCartClick, isDarkMode, onToggleTheme }: NavbarProps) {
+export default function Navbar({ cartCount, onCartClick, isDarkMode, onToggleTheme, orders }: NavbarProps) {
   const [activeCategory, setActiveCategory] = useState<string>('value-deals');
   const [isOpen, setIsOpen] = useState(false);
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
-  const [orders, setOrders] = useState<OrderDetails[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const savedOrders = localStorage.getItem('pioneer-orders');
-    if (savedOrders) {
-      const parsedOrders = JSON.parse(savedOrders).map((o: any) => ({
-        ...o,
-        status: o.status || 'Delivered' // Default to delivered for historical ones
-      }));
-      
-      // Update local storage with the migrated statuses
-      localStorage.setItem('pioneer-orders', JSON.stringify(parsedOrders));
-      setOrders(parsedOrders);
-    }
-  }, [isHistoryOpen]);
 
   useEffect(() => {
     const checkStatus = () => {

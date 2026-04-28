@@ -29,6 +29,18 @@ export default function App() {
   }, [favorites]);
 
   const [lastOrderId, setLastOrderId] = useState('');
+  const [orders, setOrders] = useState<OrderDetails[]>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('pioneer-orders');
+      if (saved) {
+        return JSON.parse(saved).map((o: any) => ({
+          ...o,
+          status: o.status || 'Delivered'
+        }));
+      }
+    }
+    return [];
+  });
   const [isDarkMode, setIsDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
       return document.documentElement.classList.contains('dark');
@@ -117,14 +129,58 @@ export default function App() {
     };
 
     // Save to order history
-    const existingHistory = JSON.parse(localStorage.getItem('pioneer-orders') || '[]');
-    localStorage.setItem('pioneer-orders', JSON.stringify([newOrder, ...existingHistory]));
+    const updatedOrders = [newOrder, ...orders];
+    setOrders(updatedOrders);
+    localStorage.setItem('pioneer-orders', JSON.stringify(updatedOrders));
 
     setLastOrderId(orderId);
     setCartItems([]);
+    setView('MENU'); // I'll change this to MENU first if we want to show history? 
+    // Actually the previous code set it to CONFIRMATION.
     setView('CONFIRMATION');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // Real-time Order Status Simulation
+  useEffect(() => {
+    const simulateUpdates = () => {
+      // Use state directly instead of re-parsing localStorage
+      if (orders.length === 0) return;
+
+      let changed = false;
+      const updatedOrders = orders.map(order => {
+        if (order.status === 'Delivered' || order.status === 'Cancelled') return order;
+
+        const orderTime = new Date(order.date).getTime();
+        const now = new Date().getTime();
+        const elapsedSeconds = (now - orderTime) / 1000;
+
+        let newStatus: OrderDetails['status'] = order.status;
+
+        if (elapsedSeconds > 300) {
+          newStatus = 'Delivered';
+        } else if (elapsedSeconds > 120) {
+          newStatus = 'Out for Delivery';
+        } else if (elapsedSeconds > 30) {
+          newStatus = 'Preparing';
+        }
+
+        if (newStatus !== order.status) {
+          changed = true;
+          return { ...order, status: newStatus };
+        }
+        return order;
+      });
+
+      if (changed) {
+        setOrders(updatedOrders);
+        localStorage.setItem('pioneer-orders', JSON.stringify(updatedOrders));
+      }
+    };
+
+    const interval = setInterval(simulateUpdates, 5000); // Check every 5 seconds
+    return () => clearInterval(interval);
+  }, [orders]);
 
   if (view === 'CHECKOUT') {
     return (
@@ -153,6 +209,7 @@ export default function App() {
         onCartClick={() => setIsCartOpen(true)} 
         isDarkMode={isDarkMode}
         onToggleTheme={toggleTheme}
+        orders={orders}
       />
       
       <main className="min-h-screen">
