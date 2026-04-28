@@ -1,6 +1,6 @@
-import { ShoppingCart, Phone, Moon, Sun, Clock } from 'lucide-react';
+import { ShoppingCart, Phone, Moon, Sun, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface NavbarProps {
   cartCount: number;
@@ -12,6 +12,7 @@ interface NavbarProps {
 export default function Navbar({ cartCount, onCartClick, isDarkMode, onToggleTheme }: NavbarProps) {
   const [activeCategory, setActiveCategory] = useState<string>('value-deals');
   const [isOpen, setIsOpen] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const checkStatus = () => {
@@ -70,6 +71,16 @@ export default function Navbar({ cartCount, onCartClick, isDarkMode, onToggleThe
 
       window.scrollTo({
         top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 200;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth'
       });
     }
@@ -149,8 +160,19 @@ export default function Navbar({ cartCount, onCartClick, isDarkMode, onToggleThe
       
       {/* Category Tabs Section */}
       <div className="bg-white/80 dark:bg-dark-surface/80 backdrop-blur-md border-b border-gray-100 dark:border-dark-border shadow-sm overflow-hidden py-3">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center gap-3 overflow-x-auto no-scrollbar scroll-smooth">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative flex items-center">
+          <button
+            onClick={() => scroll('left')}
+            className="flex-shrink-0 p-1 mr-2 text-gray-400 hover:text-pioneer-red dark:text-gray-500 dark:hover:text-pioneer-red transition-colors"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft size={20} className="stroke-[3]" />
+          </button>
+
+          <div 
+            ref={scrollRef}
+            className="flex items-center gap-3 overflow-x-auto no-scrollbar scroll-smooth flex-1"
+          >
             {categories.map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
@@ -175,6 +197,14 @@ export default function Navbar({ cartCount, onCartClick, isDarkMode, onToggleThe
               );
             })}
           </div>
+
+          <button
+            onClick={() => scroll('right')}
+            className="flex-shrink-0 p-1 ml-2 text-gray-400 hover:text-pioneer-red dark:text-gray-500 dark:hover:text-pioneer-red transition-colors"
+            aria-label="Scroll right"
+          >
+            <ChevronRight size={20} className="stroke-[3]" />
+          </button>
         </div>
       </div>
     </header>

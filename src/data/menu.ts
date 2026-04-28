@@ -214,6 +214,14 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Thinly shredded beef kababs tied with thread, seasoned with a secret blend of spices and charcoal-grilled for a melt-in-the-mouth experience.',
     image: 'https://images.deliveryhero.io/image/fd-pk/Products/6984401.jpg?width=%25s'
   },
+  {
+    id: 'bbq17',
+    name: 'Beef Dhaga Gola Kabab',
+    price: 400,
+    category: 'BBQ',
+    description: 'A fusion of dhaga and gola kababs, incredibly soft and flavorful beef mince grilled to perfection.',
+    image: 'https://www.chilitochoc.com/wp-content/uploads/2019/07/gola-kebab-featured-image.jpg'
+  },
 
   // KARAHI & CHINESE
   {
