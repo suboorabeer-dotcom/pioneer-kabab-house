@@ -182,6 +182,22 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Flavorful half chicken with bone, marinated in traditional spices and grilled over charcoal.',
     image: 'https://megachickenrecipes.com/wp-content/uploads/2022/11/Grilled-half-chicken-recipes-1.webp'
   },
+  {
+    id: 'bbq13',
+    name: 'Beef Boti',
+    price: 500,
+    category: 'BBQ',
+    description: 'Juicy and flavorful beef cubes marinated in special spices and charcoal-grilled to perfection.',
+    image: 'https://static2.bigstockphoto.com/2/6/2/large1500/262394587.jpg'
+  },
+  {
+    id: 'bbq14',
+    name: 'Beef Gola Kabab',
+    price: 400,
+    category: 'BBQ',
+    description: 'Soft and melt-in-your-mouth round beef kababs with aromatic spices.',
+    image: 'https://www.chilitochoc.com/wp-content/uploads/2019/07/gola-kebab-featured-image.jpg'
+  },
 
   // KARAHI & CHINESE
   {
