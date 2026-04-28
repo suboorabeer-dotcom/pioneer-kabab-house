@@ -193,7 +193,8 @@ export default function Menu({ onAddToCart, cartItemIds, favorites, onToggleFavo
           if (searchQuery.trim()) {
             items = items.filter(item => 
               item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-              item.description.toLowerCase().includes(searchQuery.toLowerCase())
+              item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+              item.category.toLowerCase().includes(searchQuery.toLowerCase())
             );
           }
 
@@ -242,7 +243,8 @@ export default function Menu({ onAddToCart, cartItemIds, favorites, onToggleFavo
            : MENU_ITEMS.filter(item => item.category === section.category);
            return items.filter(item => 
              item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-             item.description.toLowerCase().includes(searchQuery.toLowerCase())
+             item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+             item.category.toLowerCase().includes(searchQuery.toLowerCase())
            ).length === 0;
         }) && (
           <div className="text-center py-20 px-4">

@@ -206,6 +206,14 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Spicy and flavorful minced beef skewers grilled over charcoal for a classic BBQ taste.',
     image: 'https://t4.ftcdn.net/jpg/02/28/09/67/360_F_228096754_nK2RWPidbk69ftKQIjjfjEA6NgZI20mg.jpg'
   },
+  {
+    id: 'bbq16',
+    name: 'Beef Dhaga Kabab',
+    price: 400,
+    category: 'BBQ',
+    description: 'Thinly shredded beef kababs tied with thread, seasoned with a secret blend of spices and charcoal-grilled for a melt-in-the-mouth experience.',
+    image: 'https://images.deliveryhero.io/image/fd-pk/Products/6984401.jpg?width=%25s'
+  },
 
   // KARAHI & CHINESE
   {
