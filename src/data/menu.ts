@@ -198,6 +198,14 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Soft and melt-in-your-mouth round beef kababs with aromatic spices.',
     image: 'https://www.chilitochoc.com/wp-content/uploads/2019/07/gola-kebab-featured-image.jpg'
   },
+  {
+    id: 'bbq15',
+    name: 'Beef Seekh Kabab',
+    price: 400,
+    category: 'BBQ',
+    description: 'Spicy and flavorful minced beef skewers grilled over charcoal for a classic BBQ taste.',
+    image: 'https://t4.ftcdn.net/jpg/02/28/09/67/360_F_228096754_nK2RWPidbk69ftKQIjjfjEA6NgZI20mg.jpg'
+  },
 
   // KARAHI & CHINESE
   {
