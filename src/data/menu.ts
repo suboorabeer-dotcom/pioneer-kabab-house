@@ -222,6 +222,14 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'A fusion of dhaga and gola kababs, incredibly soft and flavorful beef mince grilled to perfection.',
     image: 'https://www.chilitochoc.com/wp-content/uploads/2019/07/gola-kebab-featured-image.jpg'
   },
+  {
+    id: 'bbq18',
+    name: 'Chicken Green Boti',
+    price: 500,
+    category: 'BBQ',
+    description: 'Tender boneless chicken chunks marinated in a refreshing green herbal blend and charcoal-grilled to perfection.',
+    image: 'https://www.foodfusion.com/wp-content/uploads/2017/05/ID-R00111-1.jpg?v=1587766783'
+  },
 
   // KARAHI & CHINESE
   {
