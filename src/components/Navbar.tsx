@@ -21,7 +21,14 @@ export default function Navbar({ cartCount, onCartClick, isDarkMode, onToggleThe
   useEffect(() => {
     const savedOrders = localStorage.getItem('pioneer-orders');
     if (savedOrders) {
-      setOrders(JSON.parse(savedOrders));
+      const parsedOrders = JSON.parse(savedOrders).map((o: any) => ({
+        ...o,
+        status: o.status || 'Delivered' // Default to delivered for historical ones
+      }));
+      
+      // Update local storage with the migrated statuses
+      localStorage.setItem('pioneer-orders', JSON.stringify(parsedOrders));
+      setOrders(parsedOrders);
     }
   }, [isHistoryOpen]);
 

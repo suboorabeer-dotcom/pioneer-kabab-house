@@ -29,5 +29,5 @@ export interface OrderDetails {
   items: CartItem[];
   deliveryCharge: number;
   total: number;
-  status: 'Pending' | 'Delivered' | 'Cancelled';
+  status: 'Pending' | 'Preparing' | 'Out for Delivery' | 'Delivered' | 'Cancelled';
 }

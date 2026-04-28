@@ -73,6 +73,8 @@ export default function OrderHistoryDrawer({ isOpen, onClose, orders }: OrderHis
                       <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${
                         order.status === 'Delivered' ? 'bg-green-100 text-green-600' : 
                         order.status === 'Cancelled' ? 'bg-red-100 text-red-600' : 
+                        order.status === 'Preparing' ? 'bg-blue-100 text-blue-600' :
+                        order.status === 'Out for Delivery' ? 'bg-orange-100 text-orange-600' :
                         'bg-yellow-100 text-yellow-600'
                       }`}>
                         {order.status}
