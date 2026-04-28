@@ -246,6 +246,14 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Silkily smooth and melt-in-your-mouth minced chicken kababs with a rich, creamy texture.',
     image: 'https://www.shutterstock.com/shutterstock/photos/2214158841/display_1500/stock-photo-chicken-gola-kabab-small-meat-balls-with-hole-frozen-home-made-food-2214158841.jpg'
   },
+  {
+    id: 'bbq21',
+    name: 'Malai Kabab',
+    price: 400,
+    category: 'BBQ',
+    description: 'Creamy and tender chicken kababs marinated in a rich mixture of cream and mild spices.',
+    image: 'https://cpimg.tistatic.com/07897072/b/4/Chicken-Malai-Kabab.jpg'
+  },
 
   // KARAHI & CHINESE
   {
