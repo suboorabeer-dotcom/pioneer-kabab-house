@@ -230,6 +230,14 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Tender boneless chicken chunks marinated in a refreshing green herbal blend and charcoal-grilled to perfection.',
     image: 'https://www.foodfusion.com/wp-content/uploads/2017/05/ID-R00111-1.jpg?v=1587766783'
   },
+  {
+    id: 'bbq19',
+    name: 'Chicken Neck (4 Pcs)',
+    price: 200,
+    category: 'BBQ',
+    description: 'Crispy and flavorful charcoal-grilled chicken necks, seasoned with a special mix of BBQ spices.',
+    image: 'https://i.ytimg.com/vi/_tyt2agcalI/maxresdefault.jpg'
+  },
 
   // KARAHI & CHINESE
   {
