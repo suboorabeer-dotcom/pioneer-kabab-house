@@ -289,6 +289,14 @@ export const MENU_ITEMS: MenuItem[] = [
     image: 'https://images.deliveryhero.io/image/fd-pk/LH/m1ra-hero.jpg'
   },
   {
+    id: 'k3',
+    name: 'Chicken Makhni Karahai (Half)',
+    price: 850,
+    category: 'Karahi & Chinese',
+    description: 'Creamy and buttery half-portion chicken karahi, prepared with fresh cream, butter, and traditional spices.',
+    image: 'https://i.pinimg.com/736x/99/ec/3d/99ec3dfd567a40a442fa84ba2538c0e9.jpg'
+  },
+  {
     id: 'c1',
     name: 'Chicken Shashlik with Rice',
     price: 500,
