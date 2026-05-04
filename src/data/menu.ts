@@ -290,11 +290,63 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'k3',
-    name: 'Chicken Makhni Karahai (Half)',
+    name: 'Chicken Makhni Karahai',
     price: 850,
     category: 'Karahi & Chinese',
-    description: 'Creamy and buttery half-portion chicken karahi, prepared with fresh cream, butter, and traditional spices.',
-    image: 'https://i.pinimg.com/736x/99/ec/3d/99ec3dfd567a40a442fa84ba2538c0e9.jpg'
+    description: 'Creamy and buttery chicken karahi, prepared with fresh cream, butter, and traditional spices.',
+    image: 'https://i.pinimg.com/736x/99/ec/3d/99ec3dfd567a40a442fa84ba2538c0e9.jpg',
+    variations: [
+      { size: 'Half', price: 850 },
+      { size: 'Full', price: 1600 }
+    ]
+  },
+  {
+    id: 'k4',
+    name: 'Chicken Achari Karahai',
+    price: 800,
+    category: 'Karahi & Chinese',
+    description: 'Spicy and tangy chicken karahi cooked with pickling spices for a unique and flavorful twist.',
+    image: 'https://stewwithsaba.com/wp-content/uploads/2024/10/IMG_9899-edited.jpg',
+    variations: [
+      { size: 'Half', price: 800 },
+      { size: 'Full', price: 1600 }
+    ]
+  },
+  {
+    id: 'k5',
+    name: 'Chicken Achari Makhni Karahai',
+    price: 900,
+    category: 'Karahi & Chinese',
+    description: 'A perfect blend of pickling spices and a creamy makhni base, creating a tangy and buttery chicken karahi.',
+    image: 'https://i.ytimg.com/vi/_8J3cZbgG_U/maxresdefault.jpg',
+    variations: [
+      { size: 'Half', price: 900 },
+      { size: 'Full', price: 1700 }
+    ]
+  },
+  {
+    id: 'k6',
+    name: 'Chicken White Karahai',
+    price: 850,
+    category: 'Karahi & Chinese',
+    description: 'A rich and creamy chicken karahi with a delicate white gravy, seasoned with white pepper and traditional spices.',
+    image: 'https://stewwithsaba.com/wp-content/uploads/2023/08/IMG_0585.jpg',
+    variations: [
+      { size: 'Half', price: 850 },
+      { size: 'Full', price: 1600 }
+    ]
+  },
+  {
+    id: 'k7',
+    name: 'Chicken White Makhni Karahai',
+    price: 950,
+    category: 'Karahi & Chinese',
+    description: 'A luscious blend of creamy white gravy and rich butter, seasoned with mild spices and white pepper for a decadent makhni experience.',
+    image: 'https://i.ytimg.com/vi/nJC85w4Iuyc/maxresdefault.jpg',
+    variations: [
+      { size: 'Half', price: 950 },
+      { size: 'Full', price: 1800 }
+    ]
   },
   {
     id: 'c1',

@@ -8,6 +8,7 @@ import OrderConfirmation from './components/OrderConfirmation';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import { MenuItem, CartItem, OrderDetails } from './types';
+import { RESTAURANT_LOCATION } from './constants';
 
 type AppView = 'MENU' | 'CHECKOUT' | 'CONFIRMATION';
 
@@ -120,6 +121,7 @@ export default function App() {
 
   const handlePlaceOrder = (details: Partial<OrderDetails>) => {
     const orderId = Math.random().toString(36).substring(2, 9).toUpperCase();
+    
     const newOrder: OrderDetails = {
       ...details as any,
       id: orderId,

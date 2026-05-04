@@ -10,7 +10,7 @@ export interface MenuItem {
   link?: string;
   selectedSize?: string;
   variations?: {
-    size: 'Small' | 'Medium' | 'Large';
+    size: 'Small' | 'Medium' | 'Large' | 'Half' | 'Full';
     price: number;
   }[];
 }
